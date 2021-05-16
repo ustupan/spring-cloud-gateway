@@ -1,4 +1,4 @@
-name: ZPI Twitter Client Mainline
+name: ZPI Twitter Spring Cloud Gateway
 
 on:
   push:

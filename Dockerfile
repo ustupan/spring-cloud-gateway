@@ -1,4 +1,4 @@
-FROM openjdk:8u191-jdk-alpine3.9
-ADD target/springboot-docker-0.0.1-SNAPSHOT.jar .
+FROM openjdk:8
+ADD target/api-gateway-service.jar api-gateway-service.jar
 EXPOSE 8000
-CMD java -jar springboot-docker-0.0.1-SNAPSHOT.jar --envname=prod
+ENTRYPOINT ["java", "-jar", "docker

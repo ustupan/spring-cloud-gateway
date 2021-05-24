@@ -1,4 +1,4 @@
 FROM openjdk:8
-ADD target/api-gateway-service.jar api-gateway-service.jar
+ARG DEPENDENCY=/workspace/app/target/dependency
 EXPOSE 8000
 ENTRYPOINT ["java", "-jar", "docker

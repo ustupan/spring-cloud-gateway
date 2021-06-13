@@ -2,7 +2,7 @@ name: ZPI Twitter Spring Cloud Gateway
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:

@@ -1,0 +1,123 @@
+openapi: 3.0.0
+info:
+  title: Tweets provider API
+  description: API for providing tweets filtered by hashatgs or user id/nick
+  version: 1.0.0
+paths:
+  /api/tweets:
+    get:
+      summary: Return list of tweets. Some array properties are not always passed in response. Depends on tweets' data.
+      description: Returns lists of tweets filtered by query parameters
+      parameters:
+        - name: hashtags
+          in: query
+          required: true
+          description: List of hashtags, separated by comma. Note that hashtags(#) needs to be decoded (%23) and separated by comma if more than one passed.
+          schema:
+            type: string
+        - name: user_id
+          in: query
+          required: false
+          description: ID or username of searched tweets author
+          schema:
+            type: string
+        - name: max_results
+          in: query
+          required: false
+          description: Returning tweets number limit. Default is 10.
+          schema:
+            type: number
+        - name: start_time
+          in: query
+          required: false
+          description: Not sure if working with current standard plan. Date in UTF format, from which results are collected.
+          schema:
+            type: string
+        - name: end_time
+          in: query
+          required: false
+          description: Not sure if working with current standard plan. Date in UTF format, to which results are collected.
+          schema:
+            type: string
+        - name: since_id
+          in: query
+          required: false
+          description: Not sure if working with current standard plan. User id from which tweets are collected.
+          schema:
+            type: string
+        - name: until_id
+          in: query
+          required: false
+          description: Not sure if working with current standard plan. User id to which tweets are collected.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A JSON array of tweets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    language:
+                      type: string
+                    conversation_id:
+                      type: string
+                    source:
+                      type: string
+                    created_at:
+                      type: string
+                    author:
+                      type: object
+                    text:
+                      type: string
+                    possibly_sensitive:
+                      type: boolean
+                    retweet_count:
+                      type: number
+                    reply_count:
+                      type: number
+                    like_count:
+                      type: number
+                    quote_count:
+                      type: number
+                    annotations:
+                      type: array
+                      items:
+                        type: string
+                    mentions:
+                      type: array
+                      items:
+                        type: string
+                    hashtags:
+                      type: array
+                      items:
+                        type: string
+                    cashtags:
+                      type: array
+                      items:
+                        type: string
+                    urls:
+                      type: array
+                      items:
+                        type: string
+
+  /health/check:
+    get:
+      summary: Returns OK when service is running correctly.
+      description: Endpoint to determine if service is working.
+      responses:
+        '200':
+          description: Status OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: OK

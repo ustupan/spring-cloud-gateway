@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:1.0.11-jdk
 EXPOSE 8080
 ARG JAR_FILE=target/api-gateway-service-0.0.1-SNAPSHOT.jar
 ADD ${JAR_FILE} app.jar

@@ -21,11 +21,11 @@ public class GatewayConfig {
                 .route(p -> p
                         .path("/analyze")
                         .filters(f -> f.filter(filter))
-                        .uri("http://localhost:8003")
+                        .uri("http://twitt-analysis:8003")
                 )
                 .route(p -> p
                         .path("/user/**")
-                        .uri("http://localhost:8080"))
+                        .uri("http://user-service:8080"))
 
                 .build();
 

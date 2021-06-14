@@ -1,2 +1,4 @@
+/Users/andrzej/Desktop/zpi-api-gateway/spring-cloud-gateway/src/main/java/com/gateway/apigatewayservice/RouterValidator.java
 /Users/andrzej/Desktop/zpi-api-gateway/spring-cloud-gateway/src/main/java/com/gateway/apigatewayservice/ApiGatewayServiceApplication.java
 /Users/andrzej/Desktop/zpi-api-gateway/spring-cloud-gateway/src/main/java/com/gateway/apigatewayservice/GatewayConfig.java
+/Users/andrzej/Desktop/zpi-api-gateway/spring-cloud-gateway/src/main/java/com/gateway/apigatewayservice/AuthenticationFilter.java

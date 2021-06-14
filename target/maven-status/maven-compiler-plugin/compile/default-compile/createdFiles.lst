@@ -1,2 +1,4 @@
 com/gateway/apigatewayservice/GatewayConfig.class
 com/gateway/apigatewayservice/ApiGatewayServiceApplication.class
+com/gateway/apigatewayservice/RouterValidator.class
+com/gateway/apigatewayservice/AuthenticationFilter.class

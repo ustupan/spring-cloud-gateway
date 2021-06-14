@@ -24,9 +24,9 @@ public class GatewayConfig {
                         .uri("http://localhost:8003")
                 )
                 .route(p -> p
-                        .path("/status/200")
-//                        .filters(f -> f.addRequestHeader("Hello", "World"))
-                        .uri("http://httpbin.org"))
+                        .path("/user/**")
+                        .uri("http://localhost:8080"))
+
                 .build();
 
     }
